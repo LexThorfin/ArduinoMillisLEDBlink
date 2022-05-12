@@ -1,5 +1,4 @@
 unsigned long pMillis = 0;
-unsigned long prevMillis = 0;
 const int ledPin = LED_BUILTIN;
 int ledState = LOW;
 
@@ -11,9 +10,9 @@ void setup() {
 void loop() {
   unsigned long cMillis = millis();
   
-  int rnd = cMillis % 500;
+  int rnd = cMillis % 1000;
 
-  if(prevMillis == cMillis) {
+  if(pMillis == cMillis) {
     return;
   }
   
@@ -26,11 +25,11 @@ void loop() {
 void ChangePinState(unsigned long cMil){
   if (ledState == LOW)
   {
-    prevMillis = cMil;
+    pMillis = cMil;
     ledState = HIGH;
     digitalWrite(ledPin, ledState);
   } else {
-    prevMillis = cMil;
+    pMillis = cMil;
     ledState = LOW;
     digitalWrite(ledPin, ledState);
   }  
