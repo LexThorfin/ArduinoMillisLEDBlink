@@ -4,12 +4,11 @@ int ledState = LOW;
 
 void setup() {
   pinMode(ledPin, OUTPUT);
-  Serial.begin(9600);
+  Serial.begin(115200);
 }
 
 void loop() {
   unsigned long cMillis = millis();
-  
   int rnd = cMillis % 1000;
 
   if(pMillis == cMillis) {
@@ -18,6 +17,7 @@ void loop() {
   
   if (rnd == 0)
   {
+    Serial.println("Change LED State");
     ChangePinState(cMillis);
   }
 }
