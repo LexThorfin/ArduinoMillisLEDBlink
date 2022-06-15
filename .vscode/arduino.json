@@ -1,7 +1,7 @@
 {
     "configuration": "cpu=atmega328old",
     "board": "arduino:avr:nano",
-    "port": "COM3",
+    "port": "COM4",
     "programmer": "arduino:avrisp",
     "sketch": "alex_test_01\\alex_test_01.ino"
 }

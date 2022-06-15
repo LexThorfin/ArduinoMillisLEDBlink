@@ -18,6 +18,7 @@ void loop() {
   if (rnd == 0)
   {
     Serial.println("Change LED State");
+
     ChangePinState(cMillis);
   }
 }
